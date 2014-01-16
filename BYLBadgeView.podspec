@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BYLBadgeView"
-  s.version      = "1.0"
+  s.version      = "1.0.0"
   s.summary      = "An animatable, TextKit based view to display badges."
 
   s.description  = <<-DESC
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 		   or animate down.
                    DESC
 
-  s.homepage     = "http://EXAMPLE/BYLBadgeView"
+  s.homepage     = "http://github.com/byliner/BYLBadgeView"
   # s.screenshots  = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
 
 
@@ -60,7 +60,6 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
   s.platform     = :ios, '7.0'
 
   #  When using multiple platforms
@@ -74,7 +73,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, svn and HTTP.
   #
 
-  s.source       = { :git => "http://github.com/byliner/BYLBadgeView.git", :tag => "1.0.0" }
+  s.source       = { :git => "http://github.com/byliner/BYLBadgeView.git", :tag => "v1.0.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
