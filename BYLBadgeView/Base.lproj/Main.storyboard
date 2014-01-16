@@ -1,18 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wBf-Jh-EnP"/>
+                        <viewControllerLayoutGuide type="bottom" id="VKU-I8-1Cg"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="14" placeholderIntrinsicHeight="14" translatesAutoresizingMaskIntoConstraints="NO" id="J6O-h2-H3v" userLabel="Basic Badge" customClass="BYLBadgeView">
+                                <rect key="frame" x="153" y="20" width="14" height="14"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="AnO-hw-SJZ" userLabel="Badge with Large Text" customClass="BYLBadgeView">
+                                <rect key="frame" x="135" y="54" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="PK2-21-fRY" userLabel="Badge With Large Radius" customClass="BYLBadgeView">
+                                <rect key="frame" x="140" y="124" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="badgeRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="N1i-vg-dFD" userLabel="Badge With Large Text and Large Radius" customClass="BYLBadgeView">
+                                <rect key="frame" x="135" y="184" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="badgeRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nd-Xd-c22">
+                                <rect key="frame" x="108" y="254" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Badged Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="30" placeholderIntrinsicHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="1Nb-Dv-sIj" userLabel="Animating Badge View" customClass="BYLBadgeView">
+                                <rect key="frame" x="145" y="304" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="badgeRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J6O-h2-H3v" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="021-dO-wcK"/>
+                            <constraint firstItem="PK2-21-fRY" firstAttribute="top" secondItem="AnO-hw-SJZ" secondAttribute="bottom" constant="20" id="2W7-gK-CpU"/>
+                            <constraint firstItem="AnO-hw-SJZ" firstAttribute="top" secondItem="J6O-h2-H3v" secondAttribute="bottom" constant="20" id="2k4-5g-Fqb"/>
+                            <constraint firstAttribute="centerX" secondItem="AnO-hw-SJZ" secondAttribute="centerX" id="Ddl-b0-wIk"/>
+                            <constraint firstItem="N1i-vg-dFD" firstAttribute="top" secondItem="PK2-21-fRY" secondAttribute="bottom" constant="20" id="KMM-cJ-IyB"/>
+                            <constraint firstAttribute="centerX" secondItem="PK2-21-fRY" secondAttribute="centerX" id="QmL-T4-KKx"/>
+                            <constraint firstAttribute="centerX" secondItem="N1i-vg-dFD" secondAttribute="centerX" id="X0F-cz-A31"/>
+                            <constraint firstAttribute="centerX" secondItem="1Nb-Dv-sIj" secondAttribute="centerX" id="gP0-Ij-opr"/>
+                            <constraint firstAttribute="centerX" secondItem="5nd-Xd-c22" secondAttribute="centerX" id="hoo-0H-M0l"/>
+                            <constraint firstItem="5nd-Xd-c22" firstAttribute="top" secondItem="N1i-vg-dFD" secondAttribute="bottom" constant="20" id="iiP-Mr-XjV"/>
+                            <constraint firstAttribute="centerX" secondItem="J6O-h2-H3v" secondAttribute="centerX" id="xx8-EZ-oJY"/>
+                            <constraint firstItem="1Nb-Dv-sIj" firstAttribute="top" secondItem="5nd-Xd-c22" secondAttribute="bottom" constant="20" id="zKR-mg-o80"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="animatingBadgeView" destination="1Nb-Dv-sIj" id="ww1-Ev-soc"/>
+                        <outlet property="badgeWithLargeText" destination="AnO-hw-SJZ" id="rdq-gl-mWJ"/>
+                        <outlet property="badgeWithLargeTextAndRadius" destination="N1i-vg-dFD" id="Fot-W8-5m6"/>
+                        <outlet property="badgedButton" destination="5nd-Xd-c22" id="Mjd-Sa-IR5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

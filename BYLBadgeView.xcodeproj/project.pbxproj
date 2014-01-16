@@ -20,7 +20,10 @@
 		7F39ADD61886F9AC00CED7B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F39ADB51886F9AC00CED7B1 /* Foundation.framework */; };
 		7F39ADD71886F9AC00CED7B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F39ADB91886F9AC00CED7B1 /* UIKit.framework */; };
 		7F39ADDF1886F9AC00CED7B1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F39ADDD1886F9AC00CED7B1 /* InfoPlist.strings */; };
-		7F39ADE11886F9AC00CED7B1 /* BYLBadgeViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F39ADE01886F9AC00CED7B1 /* BYLBadgeViewTests.m */; };
+		7F39ADEC1886F9E600CED7B1 /* BYLBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F39ADEB1886F9E600CED7B1 /* BYLBadgeView.m */; };
+		7F39ADEE1886FA0E00CED7B1 /* BYLBadgeView_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F39ADED1886FA0E00CED7B1 /* BYLBadgeView_Tests.m */; };
+		7F39ADF118870D0200CED7B1 /* BYLBadgeViewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F39ADF018870D0200CED7B1 /* BYLBadgeViewLayer.m */; };
+		7F39ADF318870D1400CED7B1 /* BYLBadgeViewLayer_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F39ADF218870D1400CED7B1 /* BYLBadgeViewLayer_Tests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +55,12 @@
 		7F39ADD41886F9AC00CED7B1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7F39ADDC1886F9AC00CED7B1 /* BYLBadgeViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BYLBadgeViewTests-Info.plist"; sourceTree = "<group>"; };
 		7F39ADDE1886F9AC00CED7B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7F39ADE01886F9AC00CED7B1 /* BYLBadgeViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYLBadgeViewTests.m; sourceTree = "<group>"; };
+		7F39ADEA1886F9E600CED7B1 /* BYLBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BYLBadgeView.h; path = Sources/BYLBadgeView.h; sourceTree = SOURCE_ROOT; };
+		7F39ADEB1886F9E600CED7B1 /* BYLBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BYLBadgeView.m; path = Sources/BYLBadgeView.m; sourceTree = SOURCE_ROOT; };
+		7F39ADED1886FA0E00CED7B1 /* BYLBadgeView_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYLBadgeView_Tests.m; sourceTree = "<group>"; };
+		7F39ADEF18870D0200CED7B1 /* BYLBadgeViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BYLBadgeViewLayer.h; path = Sources/BYLBadgeViewLayer.h; sourceTree = SOURCE_ROOT; };
+		7F39ADF018870D0200CED7B1 /* BYLBadgeViewLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BYLBadgeViewLayer.m; path = Sources/BYLBadgeViewLayer.m; sourceTree = SOURCE_ROOT; };
+		7F39ADF218870D1400CED7B1 /* BYLBadgeViewLayer_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYLBadgeViewLayer_Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +122,15 @@
 			children = (
 				7F39ADC41886F9AC00CED7B1 /* AppDelegate.h */,
 				7F39ADC51886F9AC00CED7B1 /* AppDelegate.m */,
+				7F39ADEA1886F9E600CED7B1 /* BYLBadgeView.h */,
+				7F39ADEB1886F9E600CED7B1 /* BYLBadgeView.m */,
+				7F39ADCD1886F9AC00CED7B1 /* Images.xcassets */,
 				7F39ADC71886F9AC00CED7B1 /* Main.storyboard */,
+				7F39ADBC1886F9AC00CED7B1 /* Supporting Files */,
 				7F39ADCA1886F9AC00CED7B1 /* ViewController.h */,
 				7F39ADCB1886F9AC00CED7B1 /* ViewController.m */,
-				7F39ADCD1886F9AC00CED7B1 /* Images.xcassets */,
-				7F39ADBC1886F9AC00CED7B1 /* Supporting Files */,
+				7F39ADEF18870D0200CED7B1 /* BYLBadgeViewLayer.h */,
+				7F39ADF018870D0200CED7B1 /* BYLBadgeViewLayer.m */,
 			);
 			path = BYLBadgeView;
 			sourceTree = "<group>";
@@ -137,8 +149,9 @@
 		7F39ADDA1886F9AC00CED7B1 /* BYLBadgeViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				7F39ADE01886F9AC00CED7B1 /* BYLBadgeViewTests.m */,
 				7F39ADDB1886F9AC00CED7B1 /* Supporting Files */,
+				7F39ADED1886FA0E00CED7B1 /* BYLBadgeView_Tests.m */,
+				7F39ADF218870D1400CED7B1 /* BYLBadgeViewLayer_Tests.m */,
 			);
 			path = BYLBadgeViewTests;
 			sourceTree = "<group>";
@@ -251,6 +264,8 @@
 			files = (
 				7F39ADCC1886F9AC00CED7B1 /* ViewController.m in Sources */,
 				7F39ADC61886F9AC00CED7B1 /* AppDelegate.m in Sources */,
+				7F39ADEC1886F9E600CED7B1 /* BYLBadgeView.m in Sources */,
+				7F39ADF118870D0200CED7B1 /* BYLBadgeViewLayer.m in Sources */,
 				7F39ADC21886F9AC00CED7B1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F39ADE11886F9AC00CED7B1 /* BYLBadgeViewTests.m in Sources */,
+				7F39ADF318870D1400CED7B1 /* BYLBadgeViewLayer_Tests.m in Sources */,
+				7F39ADEE1886FA0E00CED7B1 /* BYLBadgeView_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,13 +7,25 @@
 //
 
 #import "AppDelegate.h"
+#import "BYLBadgeView.h"
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  if (getenv("testing"))
     return YES;
+  
+  [[BYLBadgeView appearanceWhenContainedIn:[UIButton class], nil] setBadgeBackgroundColor:[UIColor redColor]];
+  [[BYLBadgeView appearanceWhenContainedIn:[UIButton class], nil] setBadgeTextColor:[UIColor purpleColor]];
+  [[BYLBadgeView appearanceWhenContainedIn:[UIButton class], nil] setBadgeRadius:10.0f];
+  NSDictionary *titleAttributes = @{NSFontAttributeName: [UIFont fontWithDescriptor:[UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleSubheadline] size:8.0f]};
+  [[BYLBadgeView appearanceWhenContainedIn:[UIButton class], nil] setBadgeTextAttributes:titleAttributes];
+  
+  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.window.rootViewController = [storyboard instantiateInitialViewController];
+  [self.window makeKeyAndVisible];
+  return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
