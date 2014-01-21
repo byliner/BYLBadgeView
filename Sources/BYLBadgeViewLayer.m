@@ -71,8 +71,8 @@
   return [super needsDisplayForKey:key];
 }
 
-+ (id <CAAction>) defaultActionForKey:(NSString *)event {
-  return [super defaultActionForKey:event];
+- (BOOL) needsDisplayOnBoundsChange {
+  return YES;
 }
 
 - (id<CAAction>)actionForKey:(NSString *)key {

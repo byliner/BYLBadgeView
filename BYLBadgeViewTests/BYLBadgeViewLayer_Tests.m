@@ -78,6 +78,11 @@
   XCTAssertTrue([BYLBadgeViewLayer needsDisplayForKey:@"badgeRadius"], @"Badge Radius should require redisplay");
 }
 
+- (void) testNeedsDisplayForBoundsChange_isTrue {
+  BYLBadgeViewLayer *badgeLayer = [[BYLBadgeViewLayer alloc] init];
+  XCTAssertTrue([badgeLayer needsDisplayOnBoundsChange], @"Badge should be redrawn when bounds changed");
+}
+
 #pragma mark - Implicit Animations
 - (void) testActionForKey_badge_withNullDelegateResponse_isNull {
   BYLBadgeViewLayer *badgeLayer = [[BYLBadgeViewLayer alloc] init];
