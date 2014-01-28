@@ -1,5 +1,4 @@
-# BYLBadgeView
-
+# BYLBadgeView [![Build Status](https://travis-ci.org/byliner/BYLBadgeView.png?branch=master)](https://travis-ci.org/byliner/BYLBadgeView)
 A badge view using TextKit APIs for rendering the badge that supports animations and UIAppearance.
 
 ## Requirements
