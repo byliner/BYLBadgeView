@@ -17,7 +17,7 @@
 @implementation BYLBadgeView_Tests
 #pragma mark - Instantiation / Configuration
 - (void) testInitWithBadge_setsBadge {
-  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:5];
+  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:@"5"];
   XCTAssertEqual(badgeView.badge, 5u, @"Badge is not 5");
 }
 
@@ -65,7 +65,7 @@
 #pragma mark - Layer Forwarding
 - (void) testSettingBadge_setsLayerBadge {
   BYLBadgeView *badgeView = [[BYLBadgeView alloc] init];
-  badgeView.badge = 5;
+  badgeView.badge = @"5";
   BYLBadgeViewLayer *layer = (BYLBadgeViewLayer *)badgeView.layer;
   XCTAssertEqual(layer.badge, 5u, @"Layer did not get the badge set");
 }
@@ -73,7 +73,7 @@
 - (void) testSettingBadgeOnLayer_setsViewBadge {
   BYLBadgeView *badgeView = [[BYLBadgeView alloc] init];
   BYLBadgeViewLayer *layer = (BYLBadgeViewLayer *)badgeView.layer;
-  layer.badge = 5;
+  layer.badge = @"5";
   XCTAssertEqual(badgeView.badge, 5u, @"Badge did not get the badge set");
 }
 
