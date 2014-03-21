@@ -11,7 +11,7 @@
 
 @implementation BYLBadgeView
 #pragma mark - Instantiation / Configuration
-- (instancetype) initWithBadge:(NSUInteger)badge {
+- (instancetype) initWithBadge:(NSString*)badge {
   if (self = [super init]) {
     [self setup];
     self.badgeLayer.badge = badge;
@@ -64,7 +64,7 @@
 }
 
 #pragma mark - Accessor Overrides
-- (void) setBadge:(NSUInteger)badge {
+- (void) setBadge:(NSString*)badge {
   self.badgeLayer.badge = badge;
   [self invalidateIntrinsicContentSize];
 }
