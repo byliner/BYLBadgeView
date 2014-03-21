@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BYLBadgeView : UIView
-@property (nonatomic) NSUInteger badge;
+@property (nonatomic) NSString *badge;
 @property (nonatomic, strong) UIColor *badgeBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, copy) NSDictionary *badgeTextAttributes UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor *badgeTextColor UI_APPEARANCE_SELECTOR;
