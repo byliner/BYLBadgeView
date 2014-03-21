@@ -124,7 +124,7 @@
   [super drawInContext:ctx];
   CGRect rect = CGContextGetClipBoundingBox(ctx);
 
-  NSString *badge = [NSString stringWithFormat:@"%i", self.badge];
+  NSString *badge = [NSString stringWithFormat:@"%@", self.badge];
   NSMutableDictionary *attributes = [[self badgeTextAttributes] mutableCopy];
   if (self.badgeTextColor)
     attributes[NSForegroundColorAttributeName] = [UIColor colorWithCGColor:self.badgeTextColor];
