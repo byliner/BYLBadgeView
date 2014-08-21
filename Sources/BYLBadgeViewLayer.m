@@ -83,7 +83,7 @@
   // the needed information. We'll do this for each of our animatable properties
   if ([key isEqualToString:@"badge"]) {
     id <CAAction> action = [self.delegate actionForLayer:self forKey:@"bounds"];
-    if (action && (NSNull*)action != [NSNull null]) {
+    if (action && (NSNull *)action != [NSNull null]) {
       CABasicAnimation *animation = (CABasicAnimation*)action;
       animation.fromValue = [self valueForKey:@"badge"];
       animation.keyPath = @"badge";
@@ -91,15 +91,15 @@
     }
   } else if ([key isEqualToString:@"badgeTextColor"]) {
     id <CAAction> action = [self.delegate actionForLayer:self forKey:@"bounds"];
-    if (action && (NSNull*)action != [NSNull null]) {
-      CABasicAnimation *animation = (CABasicAnimation*)action;
+    if (action && (NSNull *)action != [NSNull null]) {
+      CABasicAnimation *animation = (CABasicAnimation *)action;
       animation.fromValue = (id)self.badgeTextColor;
       animation.keyPath = @"badgeTextColor";
       return animation;
     }
   } else if ([key isEqualToString:@"badgeBackgroundColor"]) {
     id <CAAction> action = [self.delegate actionForLayer:self forKey:@"bounds"];
-    if (action && (NSNull*)action != [NSNull null]) {
+    if (action && (NSNull *)action != [NSNull null]) {
       CABasicAnimation *animation = (CABasicAnimation*)action;
       animation.fromValue = (id)self.badgeBackgroundColor;
       animation.keyPath = @"badgeBackgroundColor";
@@ -107,8 +107,8 @@
     }
   } else if ([key isEqualToString:@"badgeRadius"]) {
     id <CAAction> action = [self.delegate actionForLayer:self forKey:@"bounds"];
-    if (action && (NSNull*)action != [NSNull null]) {
-      CABasicAnimation *animation = (CABasicAnimation*)action;
+    if (action && (NSNull *)action != [NSNull null]) {
+      CABasicAnimation *animation = (CABasicAnimation *)action;
       animation.fromValue = [self valueForKey:@"badgeRadius"];
       animation.keyPath = @"badgeRadius";
       return animation;
@@ -124,7 +124,7 @@
   [super drawInContext:ctx];
   CGRect rect = CGContextGetClipBoundingBox(ctx);
 
-  NSString *badge = [NSString stringWithFormat:@"%i", self.badge];
+  NSString *badge = [NSString stringWithFormat:@"%@", self.badge];
   NSMutableDictionary *attributes = [[self badgeTextAttributes] mutableCopy];
   if (self.badgeTextColor)
     attributes[NSForegroundColorAttributeName] = [UIColor colorWithCGColor:self.badgeTextColor];
@@ -142,7 +142,8 @@
 #pragma mark - Accessor Overrides
 - (NSDictionary *) badgeTextAttributes {
   if (!_badgeTextAttributes) {
-    _badgeTextAttributes = [NSMutableDictionary dictionaryWithObject:[UIFont fontWithDescriptor:[UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody] size:6.0f]
+    _badgeTextAttributes = [NSMutableDictionary dictionaryWithObject:[UIFont fontWithDescriptor:[UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody]
+                                                                                           size:6.0f]
                                                               forKey:NSFontAttributeName];
   }
   
