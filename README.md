@@ -10,7 +10,7 @@ BYLBadgeView requires iOS7+.
 Using cocoapods:
 
 ```ruby
-pod 'BYLBadgeView'
+pod 'BYLBadgeView', :git => 'https://github.com/scondoo/BYLBadgeView.git'
 ```
 
 To use without cocoapods copy the files under the Sources directory into your project.
