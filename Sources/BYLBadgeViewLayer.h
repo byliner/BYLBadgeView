@@ -9,7 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface BYLBadgeViewLayer : CALayer
-@property (nonatomic) NSString *badge;
+@property (nonatomic, copy) NSString *badge;
 @property (nonatomic, copy) NSDictionary *badgeTextAttributes;
 @property (nonatomic) CGColorRef badgeTextColor;
 @property (nonatomic) CGColorRef badgeBackgroundColor;

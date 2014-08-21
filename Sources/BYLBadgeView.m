@@ -11,18 +11,9 @@
 
 @implementation BYLBadgeView
 #pragma mark - Instantiation / Configuration
-- (instancetype) initWithBadge:(NSString*)badge {
+- (instancetype) initWithBadge:(NSString *)badge {
   if (self = [super init]) {
-    [self setup];
     self.badgeLayer.badge = badge;
-  }
-  
-  return self;
-}
-
-- (instancetype) init {
-  if (self = [super init]) {
-    [self setup];
   }
   
   return self;
@@ -45,6 +36,7 @@
 }
 
 - (void) setup {
+  self.badge = @"0";
   self.layer.contentsScale = [UIScreen mainScreen].scale;
 }
 
@@ -54,22 +46,21 @@
 
 #pragma mark - Sizing
 - (CGSize) intrinsicContentSize {
-  NSString *badge = [NSString stringWithFormat:@"%d", self.badge];
-  CGSize size = [badge sizeWithAttributes:[self badgeTextAttributes]];
+  CGSize size = [self.badge sizeWithAttributes:[self badgeTextAttributes]];
   CGFloat maximumWidth = size.width + self.badgeRadius / 2;
   CGFloat minimumWidth = self.badgeRadius * 2;
-  size.width = (maximumWidth > self.badgeRadius*2) ? maximumWidth : minimumWidth;
+  size.width = MAX(maximumWidth, minimumWidth);
   size.height = MAX(size.height, minimumWidth);
   return size;
 }
 
 #pragma mark - Accessor Overrides
-- (void) setBadge:(NSString*)badge {
+- (void) setBadge:(NSString *)badge {
   self.badgeLayer.badge = badge;
   [self invalidateIntrinsicContentSize];
 }
 
-- (NSUInteger) badge {
+- (NSString *) badge {
   return self.badgeLayer.badge;
 }
 

@@ -27,9 +27,9 @@
 #pragma mark - Making a new layer
 - (void) testInitWithLayer_copiesBadge {
   BYLBadgeViewLayer *badgeLayer = [[BYLBadgeViewLayer alloc] init];
-  badgeLayer.badge = 20;
+  badgeLayer.badge = @"20";
   BYLBadgeViewLayer *copiedLayer = [[BYLBadgeViewLayer alloc] initWithLayer:badgeLayer];
-  XCTAssertEqual(copiedLayer.badge, 20u, @"Copied layer did not copy the badge");
+  XCTAssertEqual(copiedLayer.badge, @"20", @"Copied layer did not copy the badge");
 }
 
 - (void) testInitWithLayer_copiesBadgeRadius {
@@ -93,12 +93,12 @@
 
 - (void) testActionForKey_badge_withAnimationDelegateResponse_isProperAnimation {
   BYLBadgeViewLayer *badgeLayer = [[BYLBadgeViewLayer alloc] init];
-  badgeLayer.badge = 50;
+  badgeLayer.badge = @"50";
   BYLLayerDelegate *delegate = [[BYLLayerDelegate alloc] init];
   delegate.returnsAction = YES;
   badgeLayer.delegate = delegate;
   CABasicAnimation *expectedAnimation = [CABasicAnimation animationWithKeyPath:@"badge"];
-  expectedAnimation.fromValue = @50;
+  expectedAnimation.fromValue = @"50";
   CABasicAnimation *animation = (CABasicAnimation*)[badgeLayer actionForKey:@"badge"];
   XCTAssertEqualObjects(animation.fromValue, expectedAnimation.fromValue, @"Animations from values do not match");
   XCTAssertEqualObjects(animation.keyPath, expectedAnimation.keyPath, @"Animations keyPath values do not match");

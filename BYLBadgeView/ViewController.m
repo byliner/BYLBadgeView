@@ -26,7 +26,7 @@
   self.badgeWithLargeTextAndRadius.badgeTextAttributes = [self largeTextAttributes];
   
   // Note that this badge has some different styling because it is using the appearance proxy defined in the AppDelegate
-  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:20];
+  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:@"20"];
   badgeView.translatesAutoresizingMaskIntoConstraints = NO;
   badgeView.opaque = NO;
   badgeView.layer.zPosition = 10; // UIButton subviews are added later so we need to ensure this one is in front
@@ -36,12 +36,16 @@
 
   self.animatingBadgeView.badgeTextAttributes = [self textAttributesWithSize:14.0f];
   self.animatingBadgeView.backgroundColor = [UIColor clearColor];
-  self.animatingBadgeView.badge = 500;
-  [UIView animateWithDuration:5.0f delay:2.0f options:UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionRepeat animations:^{
-    self.animatingBadgeView.badge = 1000;
+  self.animatingBadgeView.badge = @"500";
+  [UIView animateWithDuration:5.0f
+                        delay:2.0f
+                      options:UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionRepeat
+                   animations:^{
+    self.animatingBadgeView.badge = @"1000";
     self.animatingBadgeView.badgeTextColor = [UIColor blueColor];
     self.animatingBadgeView.badgeBackgroundColor = [UIColor orangeColor];
-  } completion:nil];
+  }
+                   completion:nil];
 }
 
 - (NSDictionary *) largeTextAttributes {
@@ -50,7 +54,8 @@
 
 - (NSDictionary *) textAttributesWithSize:(CGFloat)size {
   return @{
-           NSFontAttributeName: [UIFont fontWithDescriptor:[UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody] size:size],
+           NSFontAttributeName: [UIFont fontWithDescriptor:[UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleBody]
+                                                      size:size],
            NSForegroundColorAttributeName: [UIColor whiteColor]
            };
 }

@@ -18,7 +18,7 @@
 #pragma mark - Instantiation / Configuration
 - (void) testInitWithBadge_setsBadge {
   BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:@"5"];
-  XCTAssertEqual(badgeView.badge, 5u, @"Badge is not 5");
+  XCTAssertEqual(badgeView.badge, @"5", @"Badge is not 5");
 }
 
 - (void) testLayerClass_isBadgeViewLayer {
@@ -41,7 +41,7 @@
 }
 
 - (void) testInitWithBadge_setsLayerScaleCorrectly {
-  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:5];
+  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:@"5"];
   XCTAssertEqual(badgeView.layer.contentsScale, [UIScreen mainScreen].scale, @"Layer is not scaled properly");
 }
 
@@ -67,14 +67,14 @@
   BYLBadgeView *badgeView = [[BYLBadgeView alloc] init];
   badgeView.badge = @"5";
   BYLBadgeViewLayer *layer = (BYLBadgeViewLayer *)badgeView.layer;
-  XCTAssertEqual(layer.badge, 5u, @"Layer did not get the badge set");
+  XCTAssertEqual(layer.badge, @"5", @"Layer did not get the badge set");
 }
 
 - (void) testSettingBadgeOnLayer_setsViewBadge {
   BYLBadgeView *badgeView = [[BYLBadgeView alloc] init];
   BYLBadgeViewLayer *layer = (BYLBadgeViewLayer *)badgeView.layer;
   layer.badge = @"5";
-  XCTAssertEqual(badgeView.badge, 5u, @"Badge did not get the badge set");
+  XCTAssertEqual(badgeView.badge, @"5", @"Badge did not get the badge set");
 }
 
 - (void) testSettingBadgeTextAttributes_setsLayerBadgeTextAttributes {
@@ -137,13 +137,13 @@
 
 #pragma mark - Intrinsic Content Size
 - (void) testIntrinsicContentSize_withDefaultText_isBadgeRadiusTimesTwo {
-  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:5];
+  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:@"5"];
   CGSize expected = CGSizeMake(badgeView.badgeRadius * 2, badgeView.badgeRadius * 2);
   XCTAssertTrue(CGSizeEqualToSize(badgeView.intrinsicContentSize, expected), @"Intrinsic Content Size does not match");
 }
 
 - (void) testIntrinsicContentSize_withLargeText_fitsLargeText {
-  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:55555];
+  BYLBadgeView *badgeView = [[BYLBadgeView alloc] initWithBadge:@"55555"];
   badgeView.badgeTextAttributes = [self defaultAttributesWithTextSize:16.0f];
   CGSize textSize = [@"55555" sizeWithAttributes:badgeView.badgeTextAttributes];
   CGSize expected = CGSizeMake(textSize.width + badgeView.badgeRadius/2, textSize.height);
